@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-
+import Popup from 'reactjs-popup';
+import ReactModal from 'react-modal';
 export default class App extends Component {
     static displayName = App.name;
 
     constructor(props) {
         super(props);
-        this.state = { forecasts: [], loading: true, userInput: '' };
+        this.state = { forecasts: [], loading: true, userInput: ''};
     }
 
     componentDidMount() {
@@ -42,7 +43,6 @@ export default class App extends Component {
 
     async populateWeatherData(userInput) {
         const response = await fetch(`weatherforecast/${userInput}`);
-        console.log(response)
         const data = await response.json();
         this.setState({ forecasts: data, loading: false, userInput: '' });
     }
