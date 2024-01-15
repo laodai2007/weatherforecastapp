@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Popup from 'reactjs-popup';
-import ReactModal from 'react-modal';
+
 export default class App extends Component {
     static displayName = App.name;
 
